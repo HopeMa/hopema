@@ -3,7 +3,7 @@
     "docs:build": "vuepress build docs"
   },
   "gitHooks": {
-    "pre-push": "./deploy.sh"
+    "pre-commit": "./deploy.sh && git add ."
   },
   "dependencies": {
     "yorkie": "^2.0.0"

@@ -7,7 +7,7 @@
     <meta name="description" content="技术学习进阶之路">
     
     
-    <link rel="preload" href="/hopema/assets/css/0.styles.406f8bc7.css" as="style"><link rel="preload" href="/hopema/assets/js/app.927d6584.js" as="script"><link rel="preload" href="/hopema/assets/js/2.8a77dd28.js" as="script"><link rel="preload" href="/hopema/assets/js/10.dcb0beca.js" as="script"><link rel="prefetch" href="/hopema/assets/js/11.e7d5137e.js"><link rel="prefetch" href="/hopema/assets/js/3.12dddacb.js"><link rel="prefetch" href="/hopema/assets/js/4.15e28ee5.js"><link rel="prefetch" href="/hopema/assets/js/5.e7c3a4ef.js"><link rel="prefetch" href="/hopema/assets/js/6.517070c7.js"><link rel="prefetch" href="/hopema/assets/js/7.d4261aea.js"><link rel="prefetch" href="/hopema/assets/js/8.5a6ba24e.js"><link rel="prefetch" href="/hopema/assets/js/9.85c5bfc4.js">
+    <link rel="preload" href="/hopema/assets/css/0.styles.406f8bc7.css" as="style"><link rel="preload" href="/hopema/assets/js/app.134263de.js" as="script"><link rel="preload" href="/hopema/assets/js/2.8a77dd28.js" as="script"><link rel="preload" href="/hopema/assets/js/10.76964f84.js" as="script"><link rel="prefetch" href="/hopema/assets/js/11.e7d5137e.js"><link rel="prefetch" href="/hopema/assets/js/3.12dddacb.js"><link rel="prefetch" href="/hopema/assets/js/4.15e28ee5.js"><link rel="prefetch" href="/hopema/assets/js/5.e7c3a4ef.js"><link rel="prefetch" href="/hopema/assets/js/6.036ba408.js"><link rel="prefetch" href="/hopema/assets/js/7.bc1bb865.js"><link rel="prefetch" href="/hopema/assets/js/8.5a6ba24e.js"><link rel="prefetch" href="/hopema/assets/js/9.85c5bfc4.js">
     <link rel="stylesheet" href="/hopema/assets/css/0.styles.406f8bc7.css">
   </head>
   <body>
@@ -50,10 +50,8 @@
       <span class="token string">&quot;git add&quot;</span>
     <span class="token punctuation">]</span>
   <span class="token punctuation">}</span>
-</code></pre></div><h3 id="githooks和lint-staged"><a href="#githooks和lint-staged" aria-hidden="true" class="header-anchor">#</a> gitHooks和lint-staged</h3> <p>其实我试了一下如果单纯的安装vue3的package.json，是不会在.git/hooks/下面生成pre-commit，只有pre-commit.sample，所以估计vue3是执行过</p> <div class="language- extra-class"><pre class="language-text"><code>npm i husky
-// 或
-yarn add husky
-</code></pre></div><p>所以生成了githooks相关文件，githooks才能起作用</p> <p>可以看出gitHooks以及lint-staged是代码检查工具，当不符合规范时，commit的时候会提示提交不了，保证了代码的规范性</p> <h3 id="workspaces"><a href="#workspaces" aria-hidden="true" class="header-anchor">#</a> workspaces</h3> <h4 id="为什么这个，这个是干嘛的"><a href="#为什么这个，这个是干嘛的" aria-hidden="true" class="header-anchor">#</a> 为什么这个，这个是干嘛的</h4> <p>前端项目越来越大，成熟的团队免不了分模块开发再集成，有时候我们也会发布一些npm包用于拆分维护各种模块，这种时候，在正式发布前，我们的包往往不太方便测试，比如要输出bin等操作。</p> <ul><li>您的依赖关系可以链接在一起，这意味着您的工作区可以相互依赖，同时始终使用最新的可用代码。这也是一个相对于yarn link更好的机制，因为它只影响你的工作空间树，而不是整个系统。</li> <li>您所有的项目依赖关系都将被安装在一起，为Yarn提供更多的自由度来更好地优化它们。</li> <li>对于每个项目，Yarn将使用一个单独的锁文件而不是为每个工程使用一个不同的锁文件，这意味着更少的冲突和更容易的审查。</li></ul> <h4 id="已有方案npm-link-yarn-link"><a href="#已有方案npm-link-yarn-link" aria-hidden="true" class="header-anchor">#</a> 已有方案npm link/yarn link</h4> <p>还好，npm以及后起之秀yarn都为我们提供了便捷的方式。</p> <ol><li>npm link/yarn link</li></ol> <p>在希望同步开发的组件包下执行（假设为component-a）</p> <div class="language-powershell extra-class"><pre class="language-powershell"><code>npm link
+</code></pre></div><h3 id="githooks和lint-staged"><a href="#githooks和lint-staged" aria-hidden="true" class="header-anchor">#</a> gitHooks和lint-staged</h3> <p>使用的是尤大改写的yorkie，yorkie实际是fork husky，然后做了一些定制化的改动，使得钩子能从package.json的 &quot;gitHooks&quot;属性中读取。
+所以生成了githooks相关文件，githooks才能起作用</p> <p>可以看出gitHooks以及lint-staged是代码检查工具，当不符合规范时，commit的时候会提示提交不了，保证了代码的规范性</p> <h3 id="workspaces"><a href="#workspaces" aria-hidden="true" class="header-anchor">#</a> workspaces</h3> <h4 id="为什么这个，这个是干嘛的"><a href="#为什么这个，这个是干嘛的" aria-hidden="true" class="header-anchor">#</a> 为什么这个，这个是干嘛的</h4> <p>前端项目越来越大，成熟的团队免不了分模块开发再集成，有时候我们也会发布一些npm包用于拆分维护各种模块，这种时候，在正式发布前，我们的包往往不太方便测试，比如要输出bin等操作。</p> <ul><li>您的依赖关系可以链接在一起，这意味着您的工作区可以相互依赖，同时始终使用最新的可用代码。这也是一个相对于yarn link更好的机制，因为它只影响你的工作空间树，而不是整个系统。</li> <li>您所有的项目依赖关系都将被安装在一起，为Yarn提供更多的自由度来更好地优化它们。</li> <li>对于每个项目，Yarn将使用一个单独的锁文件而不是为每个工程使用一个不同的锁文件，这意味着更少的冲突和更容易的审查。</li></ul> <h4 id="已有方案npm-link-yarn-link"><a href="#已有方案npm-link-yarn-link" aria-hidden="true" class="header-anchor">#</a> 已有方案npm link/yarn link</h4> <p>还好，npm以及后起之秀yarn都为我们提供了便捷的方式。</p> <ol><li>npm link/yarn link</li></ol> <p>在希望同步开发的组件包下执行（假设为component-a）</p> <div class="language-powershell extra-class"><pre class="language-powershell"><code>npm link
 <span class="token operator">/</span><span class="token operator">/</span> or
 yarn link
 </code></pre></div><p>如果是npm，执行后如果项目没有node依赖，会在根目录创建一个空的node_modules，yarn则不会</p> <p>回到使用依赖的项目下（假设为component-b），执行</p> <div class="language-powershell extra-class"><pre class="language-powershell"><code>npm link component<span class="token operator">-</span>a
@@ -66,6 +64,6 @@ yarn link component<span class="token operator">-</span>a
 <span class="token operator">/</span><span class="token operator">/</span> or
 yarn install
 </code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/hopema/assets/js/app.927d6584.js" defer></script><script src="/hopema/assets/js/2.8a77dd28.js" defer></script><script src="/hopema/assets/js/10.dcb0beca.js" defer></script>
+    <script src="/hopema/assets/js/app.134263de.js" defer></script><script src="/hopema/assets/js/2.8a77dd28.js" defer></script><script src="/hopema/assets/js/10.76964f84.js" defer></script>
   </body>
 </html>
