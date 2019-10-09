@@ -12,3 +12,8 @@ sidebar: auto
 1. <a href="https://www.cnblogs.com/sskyy/p/6496287.html">前端服务化——页面搭建工具的死与生</a>
 1. <a href="https://juejin.im/post/5d8774bff265da03ae78b2a1">前端工程实践之可视化搭建系统（鲁班系统）</a>
 1. <a href="https://juejin.im/entry/5c621873518825629457f93a">页面可视化搭建工具技术要点</a>
+
+<bottomuser 
+    :contributors="[
+        {name: 'xq', headimg:''},
+        {name: 'nz', headimg:''}]" />
