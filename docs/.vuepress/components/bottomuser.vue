@@ -1,15 +1,15 @@
 <template>
     <div class="contributorBottom">
-        <div class="word">主要贡献者: </div>
-        <div class="contributors" >
-            <div class="contributor" v-for="i in contributors">
-                <div class="headimg">
-                    <img :src="i.headimg || '/headimg.jpg'"  alt="">
+        <div class="cb-word">主要贡献者: </div>
+        <div class="cb-contributors" >
+            <div class="cb-contributor" v-for="i in contributors">
+                <div class="cb-headimg">
+                    <img :src="i.headimg || $withBase('/headimg.jpg')"  alt="">
                 </div>
-                <div class="name">
+                <div class="cb-name">
                     {{i.name}}
                 </div>
-                <a class="github" :href="i.github">github</a>
+                <a class="cb-github" :href="i.github">github</a>
             </div>
         </div>
     </div>
@@ -17,16 +17,17 @@
 </template>
 <style>
     .contributorBottom{
-        border: 1px 0 0 1px solid #eaecef;
-        padding: 1.2rem 0;
-        margin: 2.5rem 0;
+        margin-top: 2rem;
+        /* border: 1px 0 0 1px solid #eaecef; */
+        /* padding: 1.2rem 0; */
+        /* margin: 2.5rem 0; */
     }
-    .word{
+    .cb-word{
         margin: 0;
         padding: 0;
     }
-    .contributors{
-        border: 1px 0 0 1px solid #eaecef;
+    .cb-contributors{
+        /* border: 1px solid #eaecef; */
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
@@ -34,7 +35,7 @@
         justify-content: space-between;
         position: fixed;
     }
-    .contributor{
+    .cb-contributor{
         /* flex-grow: 1; */
         /* flex-basis: 30%; */
         /* max-width: 30%; */
@@ -43,17 +44,17 @@
         margin: 1rem;
         text-align: center;
     }
-    .name{
+    .cb-name{
         text-align: center;
         line-height: 1rem;
     }
-    .headimg{
+    .cb-headimg{
         width: 4rem;
         height: 4rem;
         border-radius: 100%;
         overflow: hidden;
     }
-    .github{
+    .cb-github{
         text-align: center
     }
     
