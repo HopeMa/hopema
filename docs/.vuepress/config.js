@@ -2,7 +2,7 @@ module.exports = {
     title: 'HopeMa学习历程',
     description: '技术学习进阶之路',
     port: 8083,
-    base: '/',
+    base: '/hopema',
     // configureWebpack: {
     //   resolve: {
     //     alias: {
