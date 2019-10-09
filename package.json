@@ -3,7 +3,6 @@
     "docs:build": "vuepress build docs"
   },
   "gitHooks": {
-    "pre-commit": "./deploy.sh",
     "pre-push": "./deploy.sh"
   },
   "dependencies": {
