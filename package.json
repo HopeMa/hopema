@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "docs:build": "vuepress build docs"
+  },
+  "gitHooks": {
+    "pre-push": "./deploy.sh"
+  }
+}

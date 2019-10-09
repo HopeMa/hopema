@@ -14,6 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:hopema/hopema.git master:hopema-pages
+git push -f https://github.com/HopeMa/hopema.git master:gh-pages
 
 cd -
