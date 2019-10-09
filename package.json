@@ -5,5 +5,8 @@
   "gitHooks": {
     "pre-commit": "./deploy.sh",
     "pre-push": "./deploy.sh"
+  },
+  "dependencies": {
+    "yorkie": "^2.0.0"
   }
 }

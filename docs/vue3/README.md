@@ -57,6 +57,14 @@ vue3主要代码结构目录，后续在添加修改
   }
 ~~~
 ### gitHooks和lint-staged
+其实我试了一下如果单纯的安装vue3的package.json，是不会在.git/hooks/下面生成pre-commit，只有pre-commit.sample，所以估计vue3是执行过
+~~~ 
+npm i husky
+// 或
+yarn add husky
+~~~
+所以生成了githooks相关文件，githooks才能起作用
+
 可以看出gitHooks以及lint-staged是代码检查工具，当不符合规范时，commit的时候会提示提交不了，保证了代码的规范性
 
 ### workspaces
