@@ -17,42 +17,28 @@ module.exports = {
         nav: [
           { text: '主页', link: '/' },
           { text: 'vue3源码导读', link: '/vue3/' },
-          // { text: '技术杂谈', link: '/vue3/' },
           {
-            text: '技术杂谈',
+            text: '技术·杂谈',
             items: [
               { text: '前端可视化后台', link: '/technicalTalks/forntBack/' },
               { text: '微信机器人', link: '/technicalTalks/wechatRobot/'}
-              // { text: 'Japanese', link: '/language/japanese' }
-              // { text: 'Group1', items: [{ text: 'Chinese', link: '/language/chinese' }] },
-              // { text: 'Japanese', link: '/language/japanese' }
             ]
           },
-          // { text: 'Guide', link: '/foo/' },
+          {
+            text: '前端·面试',
+            items: [
+              { text: "面试积累", link: '/frontInterview/'},
+              { text: '前端可视化后台', link: '/frontInterview/forntBack/' },
+              { text: '微信机器人', link: '/frontInterview/wechatRobot/'}
+            ]
+          },
           { text: 'github', link: 'https://github.com/HopeMa/hopema' },
-          // {
-            // text: 'Languages',
-            // items: [
-            //   { text: 'Chinese', link: '/language/chinese' },
-            //   { text: 'Japanese', link: '/language/japanese' }
-              // { text: 'Group1', items: [{ text: 'Chinese', link: '/language/chinese' }] },
-              // { text: 'Japanese', link: '/language/japanese' }
-            // ]
-          // }
         ],
-        sidebar: [
-            ['/vue3', 'Explicit link text']
-            // {
-            //     title: 'Group 1',
-            //     collapsable: false,
-            //     children: [
-            //       '/foo'
-            //     ]
-            //   },
-            //   {
-            //     title: 'Group 2',
-            //     children: [ /* ... */ ]
-            //   }
-        ]
+        sidebar: {
+            '/frontInterview/': [
+              ['', 'ES6知识汇总'],
+              ['one', '还没想好']
+            ]
+        }
       }
 }
