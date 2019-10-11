@@ -28,8 +28,8 @@ module.exports = {
             text: '前端·面试',
             items: [
               { text: "面试积累", link: '/frontInterview/'},
-              { text: '前端可视化后台', link: '/frontInterview/forntBack/' },
-              { text: '微信机器人', link: '/frontInterview/wechatRobot/'}
+              // { text: '前端可视化后台', link: '/frontInterview/forntBack/' },
+              // { text: '微信机器人', link: '/frontInterview/wechatRobot/'}
             ]
           },
           { text: 'github', link: 'https://github.com/HopeMa/hopema' },
@@ -37,7 +37,7 @@ module.exports = {
         sidebar: {
             '/frontInterview/': [
               ['', 'ES6知识汇总'],
-              ['one', '还没想好']
+              ['one', '前端面试手写题']
             ]
         }
       }

@@ -114,3 +114,40 @@ yarn
 // or
 yarn install
 ~~~ 
+
+## 运行环境 dev 分析
+
+~~~ js
+const execa = require('execa')
+/*
+execa是可以调用shell和本地外部程序的javascript封装。会启动子进程执行。
+支持多操作系统，包括windows。
+如果父进程退出，则生成的全部子进程都被杀死。
+*/
+const { targets, fuzzyMatchTarget } = require('./utils')
+
+const args = require('minimist')(process.argv.slice(2))
+// minimist: 轻量级的命令行参数解析引擎
+const target = args._.length ? fuzzyMatchTarget(args._)[0] : 'vue'
+const formats = args.formats || args.f
+const commit = execa.sync('git', ['rev-parse', 'HEAD']).stdout.slice(0, 7)
+// 获取最新commit的前7位
+
+// Rollup 是一个 JavaScript 模块打包器 -wc监听文件变化 --environment使用根目录的配置文件rollup.config.js
+execa(
+  'rollup',
+  [
+    '-wc',
+    '--environment',
+    [
+      `COMMIT:${commit}`,
+      `TARGET:${target}`,
+      `FORMATS:${formats || 'global'}`
+    ].join(',')
+  ],
+  {
+    stdio: 'inherit'
+  }
+)
+
+~~~
