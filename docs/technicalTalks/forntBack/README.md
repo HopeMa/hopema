@@ -13,6 +13,10 @@ sidebar: auto
 1. <a href="https://juejin.im/post/5d8774bff265da03ae78b2a1">前端工程实践之可视化搭建系统（鲁班系统）</a>
 1. <a href="https://juejin.im/entry/5c621873518825629457f93a">页面可视化搭建工具技术要点</a>
 
+### 思路文章
+1. <a href="https://zhuanlan.zhihu.com/p/34790596">十倍效能提升——Web 基础研发体系的建立</a>
+1. <a href="https://www.cnblogs.com/sskyy/p/7002404.html">通天塔之石——企业级前端组件库方案</a>
+
 <bottomuser 
     :contributors="[
         {name: 'xq', headimg:''},
