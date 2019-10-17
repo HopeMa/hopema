@@ -20,8 +20,9 @@ module.exports = {
           {
             text: '技术·杂谈',
             items: [
+              { text: '技术优质文章集', link: '/technicalTalks/article/' },
               { text: '前端可视化后台', link: '/technicalTalks/forntBack/' },
-              { text: '微信机器人', link: '/technicalTalks/wechatRobot/'}
+              { text: '微信机器人搭建', link: '/technicalTalks/wechatRobot/'}
             ]
           },
           {
