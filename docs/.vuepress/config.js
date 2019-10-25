@@ -33,12 +33,21 @@ module.exports = {
               // { text: '微信机器人', link: '/frontInterview/wechatRobot/'}
             ]
           },
+          {
+            text: '计算机·基础',
+            items: [
+              { text: '算法基础合集', link: '/basiccomputer/algorithm/' },
+            ]
+          },
           { text: 'github', link: 'https://github.com/HopeMa/hopema' },
         ],
         sidebar: {
             '/frontInterview/': [
               ['', 'ES6知识汇总'],
               ['one', '前端面试手写题']
+            ],
+            '/basiccomputer/': [
+              ['algorithm', '算法集合'],
             ]
         }
       }

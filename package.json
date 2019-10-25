@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
   "gitHooks": {
