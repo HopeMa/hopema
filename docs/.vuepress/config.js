@@ -44,10 +44,15 @@ module.exports = {
         sidebar: {
             '/frontInterview/': [
               ['', 'ES6知识汇总'],
-              ['one', '前端面试手写题']
+              ['one', '前端面试手写题'],
+              ['two', 'vue问题总结']
             ],
             '/basiccomputer/': [
               ['algorithm', '算法集合'],
+            ],
+            '/vue3/': [
+              ['', 'vue3源码导读'],
+              ['one', 'vue3与vue2区别对比']
             ]
         }
       }

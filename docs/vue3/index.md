@@ -1,5 +1,5 @@
 ---
-sidebar: auto
+# sidebar: auto
 ---
 # vue3源码学习
 ## vue3源码大体导读

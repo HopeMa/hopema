@@ -14,3 +14,6 @@ sidebar: auto
 [vue渲染器解析 - HcySunYang](http://hcysun.me/vue-design/zh/donor-list.html)
 
 [Vue.js 技术揭秘 - ustbhuangyi](https://ustbhuangyi.github.io/vue-analysis/)
+
+## js机器学习
+[TensorFlow.js机器学习](https://mp.weixin.qq.com/s/e3WoYNDwlzBoYNMBurANdA)
