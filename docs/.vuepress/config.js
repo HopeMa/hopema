@@ -45,7 +45,8 @@ module.exports = {
             '/frontInterview/': [
               ['', 'ES6知识汇总'],
               ['one', '前端面试手写题'],
-              ['two', 'vue问题总结']
+              ['two', 'vue问题总结'],
+              ['three', '前端性能优化']
             ],
             '/basiccomputer/': [
               ['algorithm', '算法集合'],

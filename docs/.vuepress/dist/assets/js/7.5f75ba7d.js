@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{209:function(t,s,o){"use strict";o.r(s);var e={props:{color:{},size:{}}},n=o(0),r=Object(n.a)(e,(function(){var t=this.$createElement,s=this._self._c||t;return s("font",{attrs:{color:this.color,size:this.size}},[s("sort")],1)}),[],!1,null,null,null);s.default=r.exports}}]);

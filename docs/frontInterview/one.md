@@ -140,6 +140,23 @@ Function.prototype.mybind = function(oThis){
     return fBound;
 }
 
+function MyBind(oThis){
+    if(typeof this !== 'function'){
+        throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
+    }
+    let arg = Array.prototype.slice.call(arguments, 1)
+    let fToBind = this 
+    let fNOP = function(){}
+    let fBound = function(){
+        return fToBind.apply(this instanceof fBound ? this:oThis, arg.concat([...arguments]))
+    }
+    if(this.prototype){
+        fNOP.prototype = this.prototype; 
+    }
+    fBound.prototype = new fNOP();
+    return fBound
+}
+
 function myNew(fn){
     //   创建一个空对象
     let obj = {}
