@@ -3,13 +3,13 @@ module.exports = {
     description: '技术学习进阶之路',
     port: 8083,
     base: '/hopema/',
-    // configureWebpack: {
-    //   resolve: {
-    //     alias: {
-    //       '@alias': 'path/to/some/dir'
-    //     }
-    //   }
-    // },
+    configureWebpack: {
+      resolve: {
+        alias: {
+          '@alias': '/hopema/assets/img/'
+        }
+      }
+    },
     themeConfig: {
         // navbar: false, // 禁用导航栏
         displayAllHeaders: true,
@@ -28,28 +28,36 @@ module.exports = {
           {
             text: '前端·面试',
             items: [
-              { text: "面试积累", link: '/frontInterview/'},
-              // { text: '前端可视化后台', link: '/frontInterview/forntBack/' },
+              { text: "面试", link: '/frontInterview/interview/zero'},
+              { text: 'js库学习', link: '/frontInterview/js_libraries/one' },
               // { text: '微信机器人', link: '/frontInterview/wechatRobot/'}
             ]
           },
           {
             text: '计算机·基础',
             items: [
-              { text: '算法基础合集', link: '/basiccomputer/algorithm/' },
+              { text: '算法基础合集', link: '/basiccomputer/algorithm/one' },
+              { text: 'webRTC', link: '/basiccomputer/webrtc/webrtc' },
             ]
           },
           { text: 'github', link: 'https://github.com/HopeMa/hopema' },
         ],
         sidebar: {
-            '/frontInterview/': [
-              ['', 'ES6知识汇总'],
+            '/frontInterview/interview/': [
+              ['zero', 'ES6知识汇总'],
               ['one', '前端面试手写题'],
               ['two', 'vue问题总结'],
               ['three', '前端性能优化']
             ],
-            '/basiccomputer/': [
-              ['algorithm', '算法集合'],
+            '/frontInterview/js_libraries/': [
+              ['one', '前端库集合'],
+            ],
+            '/basiccomputer/algorithm/': [
+              ['one', '算法集合'],
+            ],
+            '/basiccomputer/webrtc/': [
+              ['webrtc_introduce', 'webRTC简介'],
+              ['webrtc', 'webRTC学习'],
             ],
             '/vue3/': [
               ['', 'vue3源码导读'],
