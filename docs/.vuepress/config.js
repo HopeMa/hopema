@@ -22,7 +22,8 @@ module.exports = {
             items: [
               { text: '技术优质文章集', link: '/technicalTalks/article/' },
               { text: '前端可视化后台', link: '/technicalTalks/forntBack/' },
-              { text: '微信机器人搭建', link: '/technicalTalks/wechatRobot/'}
+              { text: '微信机器人搭建', link: '/technicalTalks/wechatRobot/'},
+              { text: '音视频相关', link: '/technicalTalks/video_audio/article'},
             ]
           },
           {
@@ -43,6 +44,9 @@ module.exports = {
           { text: 'github', link: 'https://github.com/HopeMa/hopema' },
         ],
         sidebar: {
+            '/technicalTalks/video_audio/':[
+              ['article','音视频相关文章']
+            ],
             '/frontInterview/interview/': [
               ['zero', 'ES6知识汇总'],
               ['one', '前端面试手写题'],
