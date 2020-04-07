@@ -31,6 +31,8 @@ module.exports = {
             items: [
               { text: "面试", link: '/frontInterview/interview/zero'},
               { text: 'js库学习', link: '/frontInterview/js_libraries/one' },
+              { text: 'electron学习', link: '/frontInterview/electron/one' },
+              { text: '工作积累学习', link: '/frontInterview/worklearn/one' },
               // { text: '微信机器人', link: '/frontInterview/wechatRobot/'}
             ]
           },
@@ -55,6 +57,12 @@ module.exports = {
             ],
             '/frontInterview/js_libraries/': [
               ['one', '前端库集合'],
+            ],
+             '/frontInterview/electron/': [
+              ['one', 'electron问题积累'],
+            ],
+            '/frontInterview/worklearn/': [
+              ['one', '工作学习记录'],
             ],
             '/basiccomputer/algorithm/': [
               ['one', '算法集合'],
