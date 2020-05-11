@@ -25,7 +25,10 @@ sidebar: auto
 
 [Vue.js 技术揭秘 - ustbhuangyi](https://ustbhuangyi.github.io/vue-analysis/)
 
+[Vue源码详解之nextTick：MutationObserver只是浮云，microtask才是核心！](https://segmentfault.com/a/1190000008589736)
+
 ## js机器学习
 [TensorFlow.js机器学习](https://mp.weixin.qq.com/s/e3WoYNDwlzBoYNMBurANdA)
 
-
+## react学习
+[React Fiber架构如何从JS引擎手中“夺回”调度权](https://segmentfault.com/a/1190000020110045)

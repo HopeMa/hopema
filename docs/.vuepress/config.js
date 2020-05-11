@@ -63,6 +63,7 @@ module.exports = {
             ],
             '/frontInterview/worklearn/': [
               ['one', '工作学习记录'],
+              ['two', '网络协议学习'],
             ],
             '/basiccomputer/algorithm/': [
               ['one', '算法集合'],

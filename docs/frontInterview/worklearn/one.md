@@ -3,6 +3,7 @@
 ---
 # 工作遇到的问题积累
 1. [input框js自动输入触发change改变](#input框js自动输入触发change改变)
+2. [nvm安装的默认system不起作用](#nvm安装的默认system不起作用)
 ## input框js自动输入触发change改变
    如何通过js脚本修改input.value触发onchange，以及oninput，应用，比如在其他的网页端，你需要跳过一些步骤，通过js脚本注入实现自动输入  
 ### 通过UIEvents监听change事件
@@ -31,3 +32,19 @@ var evt = document.createEvent("HTMLEvents");
   inputele.dispatchEvent(event);
 ~~~
 
+## nvm安装的默认system不起作用
+mac每次都会出现下面这个问题
+~~~ sh
+nvm is not compatible with the npm config "prefix" option: currently set to "/usr/local"
+Run `npm config delete prefix` or `nvm use --delete-prefix v10.16.2 --silent` to unset it.
+~~~
+修改.bash_profile
+~~~ sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+~~~
+修改nvm权限
+~~~ sh
+xxx@n12313:~$ chmod 777 .nvm
+~~~
