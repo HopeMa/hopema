@@ -31,4 +31,11 @@ sidebar: auto
 [TensorFlow.js机器学习](https://mp.weixin.qq.com/s/e3WoYNDwlzBoYNMBurANdA)
 
 ## react学习
+[react源码解析](https://react.jokcy.me/)
 [React Fiber架构如何从JS引擎手中“夺回”调度权](https://segmentfault.com/a/1190000020110045)
+
+# 前端技术工具网址
+## js语法树
+[AST Explorer](https://astexplorer.net/)
+[Babel手册](https://github.com/jamiebuilds/babel-handbook)
+[Babel的官方插件实现](https://github.com/babel/babel/tree/master/packages)

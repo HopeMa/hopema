@@ -22,3 +22,40 @@
 4. 输入响应，接口响应用户操作所需的时间，
 5. Speed Index，测量填充页面内容的速度。 分数越低越好，
 6. 自定义度量，由你的业务需求和用户体验来决定。
+
+### 前端性能优化之网络层面
+缓存、请求合并、按需引入、cdn、离线
+* HttpCache：通过一定规则让网络回来的资源缓存在本地，下次使用的时候可以直接从本地读取。stale-while-revalidate可以允许资源在过期之后，在一段时间内可以继续使用，同时发起一个异步请求，可以允许资源先使用，再验证。
+* LocalStorage：前端可以使用LocalStorage将资源存储在本地，类似的还有IndexedDB。LocalStorage也有一些限制，比如一个域名只能存储5M数据，不能跨域读取。
+* MemoryCache：内存缓存， Chrome中的MemoryCache主要由GC管理，资源进入MemoryCache的时候会关联一个弱引用，在主文档关闭的时候会被清除。目前Webkit资源分成两类，一类是主资源，比如HTML页面，或者下载项，一类是派生资源，比如HTML页面中内嵌的图片或者脚本链接，分别对应代码中两个类：MainResourceLoader和SubresourceLoader。虽然Webkit支持memoryCache，但是也只是针对派生资源，它对应的类为CachedResource，用于保存原始数据（比如CSS，JS等），以及解码过的图片数据。
+* DiskCache顾名思义，就是将资源缓存到磁盘中，等待下次访问时不需要重新下载资源，而直接从磁盘中获取，它的直接操作对象为CurlCacheManager。
+* 离线包（ZCache）：用户访问页面时，内核会通过shouldInterceptRequest询问外壳是否有可用资源，如果有可用资源，外壳会返回资源，不用再去网络请求资源。【ZCache会走到外壳拦截逻辑，效率比HttpCache低一些，一般资源到Blink内核需要100ms，主文档需要300ms】
+* NetCache：DNS解析结果，长连接复用。
+* V8 Bytecode Cache：V8字节码缓存。【JS执行过一次，第二次执行能明显减少时间】。
+* Image Decode Cache：图片解码缓存。
+* PageCache：页面级缓存，在UC上角WebViewCache，在UC浏览器上点击前进后退按钮，就会产生WebViewCache。
+
+#### dns预热
+我们来看下DNS的解析流程：浏览器缓存-系统缓存-路由器缓存-ISP DNS缓存-DNS源服务器
+
+当我们访问过一次域名之后，就会在每个节点上生成DNS缓存，即完成DNS预热，这样同一地区（或网络服务商）的其他用户再次访问该域名时就不需要重新回源，直接读取最近的DNS缓存，从而减少请求次数，提升了网站访问速度。
+
+预热的方式
+1. 爬虫
+1. APP
+1. 网页meta
+~~~ html
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="dns-prefetch" href="//webresource.english.c-ctrip.com" />
+    <link rel="dns-prefetch" href="//webresource.c-ctrip.com" />
+    <link rel="dns-prefetch" href="//s.c-ctrip.com" />
+    <link rel="dns-prefetch" href="//pic.english.c-ctrip.com" />
+    <link rel="dns-prefetch" href="//m.ctrip.com" />
+~~~
+
+#### 合并http请求
+chrome在http和https下相同域名可以并发的请求数不同：http = 6，https > 13
+所以在webpack打包的时候要进行一定的请求合并，配合按需加载
+
+
+

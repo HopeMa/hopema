@@ -1,6 +1,9 @@
 ---
 # sidebar: auto
 ---
+# vue3相关
+[The process: Making Vue 3--EVAN YOU](https://increment.com/frontend/making-vue-3/)
+[尤雨溪自述：打造Vue 3背后的故事](https://mp.weixin.qq.com/s/2w3lj_mj1TqrmHfKsiZ_GA)
 # vue3和vue2的对比
 ## vue3对Web应用性能的改进
 原文地址：[vue3对Web应用性能的改进](https://mp.weixin.qq.com/s/g5S4N78lUl4jPFsqnYLB4g)

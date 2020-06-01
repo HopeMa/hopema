@@ -53,7 +53,8 @@ module.exports = {
               ['zero', 'ES6知识汇总'],
               ['one', '前端面试手写题'],
               ['two', 'vue问题总结'],
-              ['three', '前端性能优化']
+              ['three', '前端性能优化'],
+              ['four', '知识总结'],
             ],
             '/frontInterview/js_libraries/': [
               ['one', '前端库集合'],
