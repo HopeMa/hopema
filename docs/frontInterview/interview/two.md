@@ -3,7 +3,83 @@
 # markdown:
 #   -lineNumbers: true
 ---
-## vue使用总结
+## vue相关总结
+### vue-ssr
+#### lru-cache
+LRU 是 Least Recently Used 的缩写，即最近最少使用，是一种常用的页面置换算法，选择内存中最近最久未使用的页面予以淘汰。
+~~~ js
+// 算法的核心数据结构就是哈希链表，双向链表和哈希表的结合体。
+// 定义双向链表结构
+class ListNode{
+  constructor(key,value){
+    this.key = key
+    this.value = value
+    this.next = null
+    this.prev = null
+  }
+}
+// 
+class LRUCache{
+  constructor(capacity){
+    this.capacity = capacity
+    this.hashTable = {}
+    this.count = 0
+    this.dummyHead = new ListNode()
+    this.dummyTail = new ListNode()
+    this.dummyHead.next = this.dummyTail
+    this.dummyTail.prev = this.dummyHead
+  }
+  get (key) {
+    let node = this.hashTable[key] // 哈希表获取节点值
+    if (node ==null) return -1 //如果不存在返回-1
+    this.moveToHead(node) // 因为被读取了，所以要移动节点到顶部位置
+    return node.value
+  }
+  put (key,value){
+    let node = this.hashTable[key]
+    if(node == null){
+      let newNode = new ListNode(key,value)
+      this.hashTable[key] = newNode
+      this.addToHead(newNode)
+      this.count++
+      if(this.count > this.capacity){
+        this.removeLRUItem()
+      }
+    }else{
+      node.value = value
+      this.moveToHead(node)
+    }
+  }
+  removeLRUItem(){
+    let tail = this.popTail()
+    delete this.hashTable[tail.key]
+    this.count--
+  }
+  popTail(){
+    let tailItem = this.dummyTail.prev
+    this.removeFromList(tailItem)
+    return tailItem
+  }
+  moveToHead(node) { // refresh node
+    this.removeFromList(node) // 从链表中删除节点
+    this.addToHead(node) // 添加到链表的头部
+  }
+  removeFromList(node) { // 删除节点
+    let tempForPrev = node.prev // 暂存它的后继节点
+    let tempForNext = node.next // 暂存它的前驱节点
+    tempForPrev.next = tempForNext // 前驱节点的next指向后继节点
+    tempForNext.prev = tempForPrev // 后继节点的prev指向前驱节点
+  }
+  addToHead(node) { // 插入到虚拟头结点和真实头结点之间
+    node.prev = this.dummyHead // node的prev指针指向虚拟头结点
+    node.next = this.dummyHead.next // node的next指针指向原来的真实头结点
+    this.dummyHead.next.prev = node // 原来的真实头结点的prev指向node
+    this.dummyHead.next = node // 虚拟头结点的next指针指向node
+  }
+}
+~~~
+
+### vue使用总结
 [vue相关项目总结](https://github.com/fengshi123/blog)
 
 1、说说你对 SPA 单页面的理解，它的优缺点分别是什么？
@@ -878,3 +954,13 @@ var Child = {
 }
 
 ~~~
+
+## vue 中require和import区别
+require和import分别使用在：
+* require 是赋值过程并且是运行时才执行，也就是异步加载。
+* require可以理解为一个全局方法，因为它是一个方法所以意味着可以在任何地方执行。
+* import 是解构过程并且是编译时执行。
+* import必须写在文件的顶部。
+require和import的优缺点比较：
+* require的性能相对于import稍低，因为require是在运行时才引入模块并且还赋值给某个变量，而import只需要依据import中的接口在编译时引入指定模块所以性能稍高。
+
