@@ -3,10 +3,8 @@
     "dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
-  "gitHooks": {
-    "pre-commit": "./deploy.sh && git add ."
-  },
   "dependencies": {
+    "vue-template-compiler": "^2.7.16",
     "yorkie": "^2.0.0"
   }
 }
