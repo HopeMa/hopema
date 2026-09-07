@@ -43,6 +43,12 @@ module.exports = {
               { text: 'webRTC', link: '/basiccomputer/webrtc/webrtc' },
             ]
           },
+          {
+            text: 'agent',
+            items: [
+              { text: 'agent', link: '/aiagent/one' },
+            ]
+          },
           { text: 'github', link: 'https://github.com/HopeMa/hopema' },
         ],
         sidebar: {
