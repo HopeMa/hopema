@@ -47,6 +47,7 @@ module.exports = {
             text: 'agent',
             items: [
               { text: 'agent', link: '/aiagent/one' },
+              { text: 'agent工程', link: '/aiagent/two' },
             ]
           },
           { text: 'github', link: 'https://github.com/HopeMa/hopema' },
