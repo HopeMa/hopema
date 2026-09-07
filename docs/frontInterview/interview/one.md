@@ -611,3 +611,46 @@ function sendRequest (urls: string[], max: number, callback: () => void) {
 ## 实现new
 ## 实现数组flat、filter等方法
 ## lazyMan
+
+## koa 手写 Koa 的 compose 方法
+~~~ js
+function compose(middleware){
+    return function(){
+        return dispatch(0)
+        function dispatch(i){
+            let fn = middleware[i]
+            if(!fn) return
+            return fn(function next(){
+                return dispatch(i+1)
+            })
+        }
+    }
+}
+
+let obj = {
+    foo: 'bar',
+    fo: function(){
+        let self = this
+        console.log(this.foo)
+        console.log(self.foo)
+        (function(){
+            console.log(this.foo)
+            console.log(self.foo)
+        }())
+    }
+}
+obj.fo()
+ []
+function flata(arr){
+    if(!Array.isArray(arr)){
+        return arr
+    }
+    let newArr = []
+    (function flatb(arr){
+        arr.forEach((val)=>{
+            !Array.isArray(val) ? newArr.push(val) : flatb(arr)
+        })
+    })(arr)
+   
+}
+~~~

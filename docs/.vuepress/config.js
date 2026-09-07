@@ -61,6 +61,7 @@ module.exports = {
               ['two', 'vue问题总结'],
               ['three', '前端性能优化'],
               ['four', '知识总结'],
+              ['five', 'webpack知识总结'],
             ],
             '/frontInterview/js_libraries/': [
               ['one', '前端库集合'],
