@@ -37,6 +37,14 @@ module.exports = {
             ]
           },
           {
+            text: '全栈·面试',
+            items: [
+              { text: 'AI数据实战', link: '/fullstack/aidata/one' },
+              { text: '高并发，高可用', link: '/fullstack/hou/two' },
+              { text: '云原生后端', link: '/fullstack/hou/one' },
+            ]
+          },
+          {
             text: '计算机·基础',
             items: [
               { text: '算法基础合集', link: '/basiccomputer/algorithm/one' },
@@ -48,6 +56,7 @@ module.exports = {
             items: [
               { text: 'agent', link: '/aiagent/one' },
               { text: 'agent工程', link: '/aiagent/two' },
+              { text: 'skills', link: '/aiagent/three' },
             ]
           },
           { text: 'github', link: 'https://github.com/HopeMa/hopema' },
@@ -76,6 +85,13 @@ module.exports = {
             ],
             '/basiccomputer/algorithm/': [
               ['one', '算法集合'],
+            ],
+            '/fullstack/hou/': [
+              ['one', '云原生后端'],
+              ['two', '高并发，高可用'],
+            ],
+            '/fullstack/aidata/': [
+              ['one', 'AI数据实战'],
             ],
             '/basiccomputer/webrtc/': [
               ['webrtc_introduce', 'webRTC简介'],
