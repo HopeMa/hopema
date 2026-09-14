@@ -1043,10 +1043,11 @@ class UnionFind {
         root
          │ a
          │ p
-         │ p ●(isEnd: app)
+         │ p ● (isEnd: app)
          │ l
-         │ e ●(apple)
-         │ y ●(apply)
+        ╱ ╲
+     e ●    y ●
+  (apple)  (apply)      ← e 和 y 是 l 的两个分叉(共享前缀 appl)
 ```
 
 **生活类比**：通讯录按字母分组——找"张三"先跳到 Z 区再找，不用从头翻。
